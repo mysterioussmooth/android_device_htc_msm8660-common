@@ -45,13 +45,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio_policy.msm8660 \
-    audio_policy.conf \
     audio.primary.msm8660 \
-    libaudioutils
-
-# GPS
-PRODUCT_COPY_FILES += \
-    device/common/gps/gps.conf_US_SUPL:system/etc/gps.conf
+    libaudioutils \
+    audio.usb.default \
+    audio_policy.conf
 
 # Graphics
 PRODUCT_PACKAGES += \
