@@ -62,17 +62,20 @@ PRODUCT_PACKAGES += \
     libqdutils \
     libtilerenderer
 
-# OMX
+# Omx
 PRODUCT_PACKAGES += \
+    libc2dcolorconvert \
     libdivxdrmdecrypt \
-    libI420colorconvert \
     libmm-omxcore \
     libOmxCore \
     libOmxVdec \
     libOmxVenc \
     libOmxAacEnc \
     libOmxAmrEnc \
-    libstagefrighthw
+    libstagefrighthw \
+    libOmxQcelp13Enc \
+    libOmxEvrcEnc \
+    libOmxAmrEnc
 
 # HDMI
 PRODUCT_PACKAGES += \
