@@ -113,6 +113,11 @@ BOARD_EGL_CFG := device/htc/msm8660-common/configs/egl.cfg
 # Lights
 TARGET_PROVIDES_LIBLIGHTS := true
 
+
+# FM Radio
+BOARD_HAVE_FM_RADIO := true
+BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
+
 # Webkit
 ENABLE_WEBGL := true
 TARGET_FORCE_CPU_UPLOAD := true
