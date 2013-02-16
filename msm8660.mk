@@ -12,10 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Qualcomm scripts
-PRODUCT_COPY_FILES += \
-    device/htc/msm8660-common/prebuilt/init.qcom.post_boot.sh:system/etc/init.qcom.post_boot.sh \
-    device/htc/msm8660-common/prebuilt/init.qcom.efs.sync.sh:system/etc/init.qcom.efs.sync.sh
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -50,18 +46,6 @@ PRODUCT_PACKAGES += \
     audio.usb.default \
     audio_policy.conf
 
-# Graphics
-PRODUCT_PACKAGES += \
-    copybit.msm8660 \
-    gralloc.msm8660 \
-    hwcomposer.msm8660 \
-    lights.msm8660 \
-    libgenlock \
-    libmemalloc \
-    liboverlay \
-    libqdutils \
-    libtilerenderer
-
 # Omx
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
@@ -81,13 +65,20 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     hdmid
 
-# Torch
-PRODUCT_PACKAGES += \
-    Torch
-
-# USB
+# Misc
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
+
+# Lights
+PRODUCT_PACKAGES += \
+    lights.msm8660
+
+# Live Wallpapers
+PRODUCT_PACKAGES += \
+    LiveWallpapers \
+    LiveWallpapersPicker \
+    VisualizationWallpapers \
+    librs_jni
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
@@ -99,7 +90,7 @@ PRODUCT_COPY_FILES += \
     device/htc/msm8660-common/configs/media_codecs.xml:system/etc/media_codecs.xml \
     device/htc/msm8660-common/configs/media_profiles.xml:system/etc/media_profiles.xml
 
-# MSM8660 firmware
+# 8660 Common Firmware
 PRODUCT_COPY_FILES += \
     device/htc/msm8660-common/firmware/leia_pfp_470.fw:system/etc/firmware/leia_pfp_470.fw \
     device/htc/msm8660-common/firmware/leia_pm4_470.fw:system/etc/firmware/leia_pm4_470.fw \
@@ -110,9 +101,10 @@ PRODUCT_COPY_FILES += \
     device/htc/msm8660-common/firmware/bcm4330.hcd:system/vendor/firmware/bcm4330.hcd \
     device/htc/msm8660-common/firmware/bcm4329.hcd:system/vendor/firmware/bcm4329.hcd
 
-# Thermal configuration
+# Common Qualcomm scripts
 PRODUCT_COPY_FILES += \
-    device/htc/msm8660-common/configs/thermald.conf:system/etc/thermald.conf
+    device/htc/msm8660-common/prebuilt/init.qcom.post_boot.sh:system/etc/init.qcom.post_boot.sh \
+    device/htc/msm8660-common/prebuilt/init.qcom.efs.sync.sh:system/etc/init.qcom.efs.sync.sh
 
 # We have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
