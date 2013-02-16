@@ -12,19 +12,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-BOARD_VENDOR := htc
-
 TARGET_SPECIFIC_HEADER_PATH := device/htc/msm8660-common/include
 
 # Bootloader
 TARGET_NO_BOOTLOADER := true
 
-# Kernel
-TARGET_KERNEL_SOURCE := kernel/htc/msm8660
-
 # Platform
 TARGET_BOARD_PLATFORM := msm8660
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
+
+# Vendor
+BOARD_VENDOR := htc
 
 # Architecture
 TARGET_ARCH := arm
@@ -78,13 +76,7 @@ COMMON_GLOBAL_CFLAGS += -DICS_CAMERA_BLOB -DNO_UPDATE_PREVIEW
 BOARD_HAVE_HTC_FFC := true
 BOARD_NEEDS_MEMORYHEAPPMEM := true
 TARGET_DISABLE_ARM_PIE := true
-
-# Filesystem
-BOARD_VOLD_MAX_PARTITIONS := 36
-
-# FM Radio
-BOARD_HAVE_QCOM_FM := true
-COMMON_GLOBAL_CFLAGS += -DQCOM_FM_ENABLED
+BOARD_CAMERA_USE_MM_HEAP := true
 
 # GPS
 BOARD_USES_QCOM_GPS := true
@@ -113,6 +105,8 @@ BOARD_EGL_CFG := device/htc/msm8660-common/configs/egl.cfg
 # Lights
 TARGET_PROVIDES_LIBLIGHTS := true
 
+# Filesystem
+BOARD_VOLD_MAX_PARTITIONS := 36
 
 # FM Radio
 BOARD_HAVE_FM_RADIO := true
@@ -121,3 +115,4 @@ BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
 # Webkit
 ENABLE_WEBGL := true
 TARGET_FORCE_CPU_UPLOAD := true
+
