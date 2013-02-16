@@ -105,6 +105,11 @@ PRODUCT_COPY_FILES += \
     device/htc/msm8660-common/firmware/leia_pm4_470.fw:system/etc/firmware/leia_pm4_470.fw \
     device/htc/msm8660-common/firmware/vidc_1080p.fw:system/etc/firmware/vidc_1080p.fw
 
+# Copy Bluetooth firmware, since BCM4329 is a BT/WiFi chip
+PRODUCT_COPY_FILES += \
+    device/htc/msm8660-common/firmware/bcm4330.hcd:system/vendor/firmware/bcm4330.hcd \
+    device/htc/msm8660-common/firmware/bcm4329.hcd:system/vendor/firmware/bcm4329.hcd
+
 # Thermal configuration
 PRODUCT_COPY_FILES += \
     device/htc/msm8660-common/configs/thermald.conf:system/etc/thermald.conf
